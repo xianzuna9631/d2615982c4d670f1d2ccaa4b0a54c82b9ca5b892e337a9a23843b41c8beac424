@@ -2,7 +2,7 @@ name: xianzuna9631 #3294
 on: #14078
   workflow_dispatch: #22453
   schedule: #26835
-    - cron: '18 * * * *' #19400
+    - cron: '18 5/6 * * *' #19400
 jobs:  # 18589
   build: #16167
     runs-on: ubuntu-latest #32001
